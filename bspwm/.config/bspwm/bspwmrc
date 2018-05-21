@@ -42,7 +42,9 @@ bspc rule -a Transmission-gtk pseudo_tiled=on
 bspc rule -a Conky sticky=on manage=off lower=on
 bspc rule -a astime sticky=on
 bspc rule -a feh floating=on manage=off
+bspc rule -a Screenkey manage=off
+bspc rule -a mpv floating=on
 
-feh --bg-scale /home/const/Pictures/plant.jpg
+feh --bg-scale ~/.config/wall.png
 
 sxhkd &

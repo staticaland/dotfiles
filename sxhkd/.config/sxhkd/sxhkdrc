@@ -1,3 +1,4 @@
+#!/usr/bin/env sh
 #
 # wm independent hotkeys
 #
@@ -13,6 +14,12 @@ super + @space
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
+
+ctrl + shift + m
+	mpv --no-terminal --loop --mute "$(xsel)" >> ~/log/sxhkd.log 2>&1
+
+ctrl + shift + c
+	catt cast "$(xsel)" >> ~/log/sxhkd.log 2>&1
 
 #
 # bspwm hotkeys
@@ -123,3 +130,6 @@ super + {Left,Down,Up,Right}
 # Change window gap
 super + {minus,equal}
 	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2 ))
+
+super + Print
+    ~/bin/scregcp -s ~/Pictures/screenshots/
