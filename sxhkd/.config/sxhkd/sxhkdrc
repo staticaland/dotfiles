@@ -9,7 +9,7 @@ super + Return
 
 # program launcher
 super + @space
-	dmenu_run
+	rofi -show drun
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -50,8 +50,11 @@ super + g
 #
 
 # set the window state
-super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+super + {t,shift + t,f}
+	bspc node -t {tiled,pseudo_tiled,fullscreen}
+
+super + s
+	bspc node -t $(bspc query -N -n -n .tiled >/dev/null && echo floating || echo tiled)
 
 # set the node flags
 super + ctrl + {x,y,z}

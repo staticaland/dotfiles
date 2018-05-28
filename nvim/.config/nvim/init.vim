@@ -21,6 +21,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
+Plug 'godlygeek/tabular'
+Plug 'machakann/vim-highlightedyank'
 
 " Initialize plugin system
 call plug#end()
@@ -38,9 +40,11 @@ nmap <F5> :Goyo<cr>
 
 let g:airline#extensions#ale#enabled = 1
 
-set clipboard+=unnamed  " use the clipboards of vim and win
+if has('unnamedplus')
+  set clipboard=unnamed,unnamedplus
+endif
+
 set paste               " Paste from a windows or from vim
-set go+=a               " Visual selection automatically copied to the clipboard
 let mapleader=","
 
 set nowrap        " don't wrap lines
@@ -117,3 +121,11 @@ set foldlevelstart=0   " open most folds by default
 set foldnestmax=10      " 10 nested fold max
 nnoremap <space> za
 highlight EndOfBuffer guifg=bg
+
+let g:vim_markdown_frontmatter = 1
+set conceallevel=2
+
+nnoremap <leader>l :%!marklink<CR>
+vnoremap <leader>l :!marklink<CR>
+
+set inccommand=nosplit " preview substitutions
