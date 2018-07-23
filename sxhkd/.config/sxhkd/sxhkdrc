@@ -1,19 +1,24 @@
 #!/usr/bin/env sh
-#
-# wm independent hotkeys
-#
 
-# terminal emulator
-super + Return
-	urxvt
 
-# program launcher
-super + @space
-	rofi -show drun
+# █▓▒░ Maintenance
 
-# make sxhkd reload its configuration files:
+# quit bspwm normally
+super + alt + Escape
+	bspc quit
+
+# make sxhkd reload its configuration files
 super + Escape
 	pkill -USR1 -x sxhkd
+
+
+# █▓▒░ Non WM
+
+super + Return
+	urxvt256c-ml
+
+super + @space
+	rofi -show drun
 
 ctrl + shift + m
 	mpv --no-terminal --loop --mute "$(xsel)" >> ~/log/sxhkd.log 2>&1
@@ -21,13 +26,11 @@ ctrl + shift + m
 ctrl + shift + c
 	catt cast "$(xsel)" >> ~/log/sxhkd.log 2>&1
 
-#
-# bspwm hotkeys
-#
+super + Print
+    ~/bin/scregcp -s ~/Pictures/screenshots/
 
-# quit bspwm normally
-super + alt + Escape
-	bspc quit
+
+# █▓▒░ Window management
 
 # close and kill
 super + {_,shift + }w
@@ -45,14 +48,11 @@ super + y
 super + g
 	bspc node -s biggest
 
-#
-# state/flags
-#
-
 # set the window state
 super + {t,shift + t,f}
 	bspc node -t {tiled,pseudo_tiled,fullscreen}
 
+# toggle floating
 super + s
 	bspc node -t $(bspc query -N -n -n .tiled >/dev/null && echo floating || echo tiled)
 
@@ -60,9 +60,8 @@ super + s
 super + ctrl + {x,y,z}
 	bspc node -g {locked,sticky,private}
 
-#
-# focus/swap
-#
+
+# █▓▒░ Setting focus
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
@@ -72,7 +71,7 @@ super + {_,shift + }{h,j,k,l}
 super + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
-# focus the next/previous node in the current desktop
+# focus the next/previous node in the current desktop - almost like alt tab
 super + {_,shift + }c
 	bspc node -f {next,prev}.local
 
@@ -84,25 +83,18 @@ super + bracket{left,right}
 super + {grave,Tab}
 	bspc {node,desktop} -f last
 
-# focus the older or newer node in the focus history
-super + {o,i}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
-
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
-#
-# preselect
-#
 
-# preselect the direction
+# █▓▒░ Preselect direction of new nodes
+
+# preselect the direction of new node
 super + ctrl + {h,j,k,l}
 	bspc node -p {west,south,north,east}
 
-# preselect the ratio
+# preselect the ratio - the default ratio is 0.5 - pressing 3 makes the old node take up 30%
 super + ctrl + {1-9}
 	bspc node -o 0.{1-9}
 
@@ -114,9 +106,8 @@ super + ctrl + space
 super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-#
-# move/resize
-#
+
+# █▓▒░ Move and resize
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
@@ -130,9 +121,6 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-# Change window gap
+# change window gap
 super + {minus,equal}
 	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2 ))
-
-super + Print
-    ~/bin/scregcp -s ~/Pictures/screenshots/
