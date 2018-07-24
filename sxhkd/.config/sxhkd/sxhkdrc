@@ -1,7 +1,8 @@
 #!/usr/bin/env sh
+# vim: set foldmarker={{{,}}} foldlevel=0 foldmethod=marker spell:
 
 
-# █▓▒░ Maintenance
+# █▓▒░ Maintenance {{{
 
 # quit bspwm normally
 super + alt + Escape
@@ -11,8 +12,10 @@ super + alt + Escape
 super + Escape
 	pkill -USR1 -x sxhkd
 
+# }}}
 
-# █▓▒░ Non WM
+
+# █▓▒░ Non WM {{{
 
 super + Return
 	urxvt256c-ml
@@ -20,7 +23,7 @@ super + Return
 super + @space
 	rofi -show drun
 
-ctrl + shift + m
+super + alt + d
 	mpv --no-terminal --loop --mute "$(xsel)" >> ~/log/sxhkd.log 2>&1
 
 ctrl + shift + c
@@ -29,8 +32,10 @@ ctrl + shift + c
 super + Print
     ~/bin/scregcp -s ~/Pictures/screenshots/
 
+# }}}
 
-# █▓▒░ Window management
+
+# █▓▒░ Window management {{{
 
 # close and kill
 super + {_,shift + }w
@@ -60,8 +65,10 @@ super + s
 super + ctrl + {x,y,z}
 	bspc node -g {locked,sticky,private}
 
+# }}}
 
-# █▓▒░ Setting focus
+
+# █▓▒░ Setting focus {{{
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
@@ -87,8 +94,10 @@ super + {grave,Tab}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
+# }}}
 
-# █▓▒░ Preselect direction of new nodes
+
+# █▓▒░ Preselect direction of new nodes {{{
 
 # preselect the direction of new node
 super + ctrl + {h,j,k,l}
@@ -106,8 +115,10 @@ super + ctrl + space
 super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
+# }}}
 
-# █▓▒░ Move and resize
+
+# █▓▒░ Move and resize {{{
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
@@ -124,3 +135,5 @@ super + {Left,Down,Up,Right}
 # change window gap
 super + {minus,equal}
 	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2 ))
+
+# }}}
