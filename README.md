@@ -17,11 +17,11 @@ For example:
 stow ./nvim
 ```
 
-This means to take everything inside the nvim folder and symlink it to the parent directory (`..`). The parent directory happens to be stows default location for the -t option.
+This means to take everything inside the nvim folder and symlink it to the parent directory (`..`). The parent directory happens to be stows default location for the `-t` option.
 
 # IRL dotfiles
 
-When I have to write `{}[]:` on a NO layout I feel like something is holding me back. So how does this affect my productivity? How many people feel the same way, and how does it affect the world?
+When I have to write `{}[]:` on a NO layout I feel like something is holding me back. So how does this affect my productivity? How many people feel the same way, and how does it affect the *world*?
 
 Programming syntax and CLI tools (like `vim`) are biased towards the US layout. It doesn't make sense to use a NO layout. It took me a long time to figure this out.
 
