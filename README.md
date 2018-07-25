@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="screenshot.png" />
-
 <br />
 <br />
 
@@ -10,14 +8,6 @@
 <p>What?</p>
 
 </div>
-
-```
-     _       _    __ _ _           
-  __| | ___ | |_ / _(_) | ___  ___ 
- / _` |/ _ \| __| |_| | |/ _ \/ __|
-| (_| | (_) | |_|  _| | |  __/\__ \
- \__,_|\___/ \__|_| |_|_|\___||___/
-```
 
 I use `stow` to symlink the config. The parent directory should be `$HOME`.
 
@@ -29,8 +19,13 @@ stow ./nvim
 
 This means to take everything inside the nvim folder and symlink it to the parent directory (`..`). The parent directory happens to be stows default location for the -t option.
 
-# Vim
+# IRL dotfiles
 
+When I have to write `{}[]:` on a NO layout I feel like something is holding me back. So how does this affect my productivity? How many people feel the same way, and how does it affect the world?
+
+Programming syntax and CLI tools (like `vim`) are biased towards the US layout. It doesn't make sense to use a NO layout. It took me a long time to figure this out.
+
+I forced myself to switch by using the [Keyboardio Model 01](https://keyboard.io). It also taught me how to touch type. Once you get used to this keyboard, only insanity could convince you to go back.
 
 # Inspiration
 
@@ -43,18 +38,3 @@ This means to take everything inside the nvim folder and symlink it to the paren
 * [the darnedest thing](http://thedarnedestthing.com)
 * [z3bra.org - monochromatic blog](http://blog.z3bra.org/)
 * [Screencast #2: A tour of my .vimrc - YouTube](https://www.youtube.com/watch?v=BOehh0_LOEQ)
-
-
-# IRL dotfiles
-
-I stopped typing on a device modeled after 19th century typewriters.
-
-I get annoyed when I have to write {}[] on a NO layout. How does this affect my productivity? How many people feel the same way, and how does it affect the world?
-
-Many CLI tools like `vim` are biased towards the US layout.
-
-I use the [Keyboardio Model 01](https://keyboard.io) with a US inspired layout to get around this.
-
-Since coding is the most ergonomically and mentally taxing activity, I choose to optimize for it.
-
-My far fetched hypothesis is that these factors hold developers back in countries that don't use a US layout.
