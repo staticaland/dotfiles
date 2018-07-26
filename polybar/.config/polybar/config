@@ -1,6 +1,9 @@
-[colors]
+; vim: set foldmarker={{{,}}} foldlevel=0 ft=dosini foldmethod=marker spell:
 
-; █▓▒░ colors
+
+; █▓▒░ Colors {{{
+
+[colors]
 
 background = ${xrdb:color0:#222}
 foreground = ${xrdb:color7:#222}
@@ -9,9 +12,13 @@ primary = ${xrdb:color1:#222}
 secondary = ${xrdb:color2:#222}
 alert = ${xrdb:color3:#222}
 
+; }}}
+
+
 [bar/example]
 
-; █▓▒░ dimensions
+
+; █▓▒░ Dimensions {{{
 
 width = 100%
 height = 30
@@ -20,18 +27,21 @@ offset-y = 0
 radius = 0
 fixed-center = false
 
-background = ${colors.background}
-foreground = ${colors.foreground}
-
 line-size = 3
-
 border-size = 4
 
 padding-left = 2
 padding-right = 2
-
 module-margin-left = 1
 module-margin-right = 2
+
+; }}}
+
+
+; █▓▒░ Looks {{{
+
+background = ${colors.background}
+foreground = ${colors.foreground}
 
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
@@ -49,9 +59,14 @@ wm-restack = none
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+; }}}
+
+
+; █▓▒░ Modules {{{
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
+
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -68,6 +83,7 @@ label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
+
 
 [module/bspwm]
 type = internal/bspwm
@@ -86,6 +102,7 @@ label-urgent-padding = 2
 label-empty = %index%
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 2
+
 
 [module/i3]
 type = internal/i3
@@ -118,6 +135,7 @@ label-urgent = %index%
 label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
+
 [module/eth]
 type = internal/network
 interface = enp0s31f6
@@ -127,6 +145,7 @@ format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
+
 
 [module/date]
 type = internal/date
@@ -143,6 +162,7 @@ format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
 label = %date% %time%
+
 
 [module/volume]
 type = internal/volume
@@ -172,6 +192,7 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
+
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
@@ -190,6 +211,7 @@ ramp-0 = 
 ramp-1 = 
 ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
+
 
 [module/powermenu]
 type = custom/menu
@@ -220,11 +242,13 @@ menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
+; }}}
+
+
 [settings]
 screenchange-reload = true
+
 
 [global/wm]
 margin-top = 5
 margin-bottom = 5
-
-; vim:ft=dosini
