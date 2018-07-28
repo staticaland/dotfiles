@@ -1,12 +1,15 @@
 #!/usr/bin/env sh
 # vim: set foldmarker={{{,}}} foldlevel=0 foldmethod=marker spell:
+# https://github.com/Chrysostomus/bspwm-scripts/blob/master/configs/sxhkd/sxhkdrc
+# http://thedarnedestthing.com/bspwm
+# https://github.com/Benoth/dotfiles/blob/master/sxhkd/sxhkdrc
 
 
 # █▓▒░ Maintenance {{{
 
 # quit bspwm normally
 super + alt + Escape
-	zenity --question --text="Exit WM?" && bspc quit
+	zenity --question --text="Exit WM?" && bspc quit && pkill polybar
 
 # make sxhkd reload its configuration files
 super + Escape
@@ -31,6 +34,18 @@ ctrl + shift + c
 
 super + Print
     ~/bin/scregcp -s ~/Pictures/screenshots/
+
+super + f
+	switch-or-run "([A-Za-z0-9]*)\.Firefox" firefox
+
+super + c
+	switch-or-run "([A-Za-z0-9]*)\.Slack" "gtk-launch com.slack.Slack"
+
+super + s
+	switch-or-run "([A-Za-z0-9]*)\.Spotify" "gtk-launch com.spotify.Client"
+
+super + d
+	tdrop -p "bspc rule -a URxvt -o state=floating" -w 33% -y 25% -x 33% -s dropdown urxvt256c-ml
 
 # }}}
 
