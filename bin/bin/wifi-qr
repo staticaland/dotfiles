@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Share WiFi credentials through a quick response code.
+# On iOS, open the camera app and point it at the QR code.
+# Depends on pass and qrencode
+
+SSID="$1"
+PASSWORD="$(pass "$SSID")"
+QR_CONTENT="WIFI:S:$SSID;T:WPA;P:$PASSWORD;;"
+
+qrencode "$QR_CONTENT" -t UTF8
