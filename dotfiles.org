@@ -1,3 +1,25 @@
+#+TITLE: dotfiles
+
 * Dotfiles
 
-Hi
+Mouseless.
+
+** Keyboard layout toggle
+:PROPERTIES:
+:header-args: :tangle ~/bin/layout :tangle-mode (identity #o755) :mkdirp yes
+:export_file_name: keyboard-layout-toggle.md
+:END:
+
+Activate US keyboard layout if [[https://shop.keyboard.io/][Keyboardio Model 01]] is connected.
+
+#+begin_src sh
+#!/bin/bash
+if ls /dev/input/by-id/usb-* | grep -q Keyboardio
+then
+   echo "Keyboardio connected - US layout activated"
+   setxkbmap -layout us -variant altgr-intl -option compose:sclk
+else
+   echo "Keyboardio not connected - NO layout activated"
+   setxkbmap -layout no
+fi
+#+end_src
