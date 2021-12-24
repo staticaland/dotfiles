@@ -6,10 +6,34 @@ matches:
   - trigger: ":qu"
     replace: "«$|$»"
 
+  - trigger: ":bi"
+    replace: "brew install $|$"
+
+  - trigger: ":bu"
+    replace: "brew upgrade $|$"
+
+  - trigger: ":gs"
+    replace: "git status $|$"
+
+  - trigger: ":gc"
+    replace: 'git commit -m "$|$"'
+
+  - trigger: ":ga"
+    replace: "git add $|$"
+
+  - trigger: ":gp"
+    replace: "git push origin "
+
   - trigger: ":sig"
     replace: |
       Med vennlig hilsen
       Anders K. Pettersen
+
+  - trigger: ":code"
+    replace: |
+      ```
+      $|$
+      ```
 
   - trigger: ":ip"
     replace: "{{output}}"
