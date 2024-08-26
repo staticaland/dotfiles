@@ -1,5 +1,5 @@
 ############################################################
-# General
+# General Settings
 ############################################################
 
 start-at-login = false
@@ -17,7 +17,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 
 ############################################################
-# Padding and gaps
+# Padding and Gaps
 ############################################################
 
 accordion-padding = 30
@@ -32,7 +32,7 @@ outer.right = 20
 
 
 ############################################################
-# Keybindings for main mode
+# Keybindings for Main Mode
 ############################################################
 
 [mode.main.binding]
@@ -59,10 +59,10 @@ alt-p = 'exec-and-forget open -a 1Password' # "P" for Password manager
 alt-u = 'exec-and-forget open -a WezTerm' # "U" for Unix-like terminal
 alt-i = 'exec-and-forget open -a "Visual Studio Code"' # "I" for IDE
 alt-y = 'exec-and-forget open -a Slack' # "Y" for Yapping
-alt-m = 'exec-and-forget open -a Messages ' # "M" for Messages
-alt-s = 'exec-and-forget open -a Spotify ' # "S" for Spotify
-alt-e = 'exec-and-forget open -a Emacs ' # "E" for Emacs
-alt-c = 'exec-and-forget open -a Fantastical ' # "C" for Calendar
+alt-m = 'exec-and-forget open -a Messages' # "M" for Messages
+alt-s = 'exec-and-forget open -a Spotify' # "S" for Spotify
+alt-e = 'exec-and-forget open -a Emacs' # "E" for Emacs
+alt-c = 'exec-and-forget open -a Fantastical' # "C" for Calendar
 alt-a = 'exec-and-forget open -a Claude' # "A" for AI
 
 alt-shift-1 = 'move-node-to-workspace 1'
@@ -75,7 +75,7 @@ alt-shift-comma = 'mode service'
 
 
 ############################################################
-# Keybindings for service mode
+# Keybindings for Service Mode
 ############################################################
 
 [mode.service.binding]
@@ -91,12 +91,13 @@ alt-shift-l = ['join-with right', 'mode main']
 
 
 ############################################################
-# Window detection rules
+# Window Detection Rules
 ############################################################
 
 [[on-window-detected]]
 if.app-id = 'com.1password.1password'
 run = 'layout floating'
+
 
 ##############################
 # Workspace 1
@@ -117,6 +118,7 @@ run = "move-node-to-workspace 1"
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
 run = "move-node-to-workspace 1"
+
 
 ##############################
 # Workspace 2
@@ -145,6 +147,7 @@ run = "move-node-to-workspace 2"
 [[on-window-detected]]
 if.app-name-regex-substring = '^Claude$'
 run = "move-node-to-workspace 2"
+
 
 ##############################
 # Workspace 3
