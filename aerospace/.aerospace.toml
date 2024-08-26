@@ -178,6 +178,10 @@ if.app-id = 'com.apple.Notes'
 run = "move-node-to-workspace 2"
 
 [[on-window-detected]]
+if.app-id = 'com.apple.Safari'
+run = "move-node-to-workspace 2"
+
+[[on-window-detected]]
 if.app-id = 'com.spotify.client'
 run = "move-node-to-workspace 3"
 
@@ -198,5 +202,9 @@ if.app-id = 'com.apple.MobileSMS'
 run = "move-node-to-workspace 3"
 
 [[on-window-detected]]
+if.app-id = 'com.microsoft.Outlook'
+run = "move-node-to-workspace 3"
+
+[[on-window-detected]]
 if.app-id = 'com.1password.1password'
-run = 'layout floating' 
+run = 'layout floating'
