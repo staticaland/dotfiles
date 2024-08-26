@@ -38,40 +38,75 @@ outer.right = 20
 [mode.main.binding]
 alt-period = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
+
+##############################
+# Focus Movement
+##############################
 alt-h = 'focus left'
 alt-j = 'focus down'
 alt-k = 'focus up'
 alt-l = 'focus right'
+
+##############################
+# Window Movement
+##############################
 alt-shift-h = 'move left'
 alt-shift-j = 'move down'
 alt-shift-k = 'move up'
 alt-shift-l = 'move right'
+
+##############################
+# Resize
+##############################
 alt-up = 'resize smart -50'
 alt-down = 'resize smart +50'
 
+##############################
+# Workspace Switching
+##############################
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'
 
-alt-o = 'exec-and-forget open -a Obsidian' # "O" for Obsidian
-alt-f = 'exec-and-forget open -a Firefox' # "F" for Firefox
-alt-p = 'exec-and-forget open -a 1Password' # "P" for Password manager
-alt-u = 'exec-and-forget open -a WezTerm' # "U" for Unix-like terminal
-alt-i = 'exec-and-forget open -a "Visual Studio Code"' # "I" for IDE
-alt-y = 'exec-and-forget open -a Slack' # "Y" for Yapping
-alt-m = 'exec-and-forget open -a Messages' # "M" for Messages
-alt-s = 'exec-and-forget open -a Spotify' # "S" for Spotify
-alt-e = 'exec-and-forget open -a Emacs' # "E" for Emacs
-alt-c = 'exec-and-forget open -a Fantastical' # "C" for Calendar
-alt-a = 'exec-and-forget open -a Claude' # "A" for AI
-
+##############################
+# Move Node to Workspace
+##############################
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
 alt-shift-3 = 'move-node-to-workspace 3'
 
+##############################
+# Miscellaneous
+##############################
 alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 alt-shift-comma = 'mode service'
+
+##############################
+# Shortcuts on Workspace 1
+##############################
+
+alt-e = 'exec-and-forget open -a Emacs' # "E" for Emacs
+alt-i = 'exec-and-forget open -a "Visual Studio Code"' # "I" for IDE
+alt-u = 'exec-and-forget open -a WezTerm' # "U" for Unix-like terminal
+
+##############################
+# Shortcuts on Workspace 2
+##############################
+
+alt-a = 'exec-and-forget open -a Claude' # "A" for AI
+alt-o = 'exec-and-forget open -a Obsidian' # "O" for Obsidian
+alt-f = 'exec-and-forget open -a Firefox' # "F" for Firefox
+
+##############################
+# Shortcuts on Workspace 3
+##############################
+
+alt-p = 'exec-and-forget open -a 1Password' # "P" for Password manager
+alt-y = 'exec-and-forget open -a Slack' # "Y" for Yapping
+alt-m = 'exec-and-forget open -a Messages' # "M" for Messages
+alt-s = 'exec-and-forget open -a Spotify' # "S" for Spotify
+alt-c = 'exec-and-forget open -a Fantastical' # "C" for Calendar
 
 
 ############################################################
@@ -119,7 +154,6 @@ run = "move-node-to-workspace 1"
 if.app-id = 'com.microsoft.VSCode'
 run = "move-node-to-workspace 1"
 
-
 ##############################
 # Workspace 2
 ##############################
@@ -147,7 +181,6 @@ run = "move-node-to-workspace 2"
 [[on-window-detected]]
 if.app-name-regex-substring = '^Claude$'
 run = "move-node-to-workspace 2"
-
 
 ##############################
 # Workspace 3
