@@ -1,5 +1,5 @@
 ############################################################
-# General Settings
+# ⚙️ General Settings
 ############################################################
 
 start-at-login = false
@@ -17,7 +17,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 
 ############################################################
-# Padding and Gaps
+# 📏 Padding and Gaps
 ############################################################
 
 accordion-padding = 30
@@ -32,7 +32,7 @@ outer.right = 20
 
 
 ############################################################
-# Keybindings for Main Mode
+# ⌨️ Keybindings for Main Mode
 ############################################################
 
 [mode.main.binding]
@@ -40,7 +40,7 @@ alt-period = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
 
 ##############################
-# Focus Movement
+# 🔄 Focus Movement
 ##############################
 alt-h = 'focus left'
 alt-j = 'focus down'
@@ -48,7 +48,7 @@ alt-k = 'focus up'
 alt-l = 'focus right'
 
 ##############################
-# Window Movement
+# ↔️ Window Movement
 ##############################
 alt-shift-h = 'move left'
 alt-shift-j = 'move down'
@@ -56,34 +56,34 @@ alt-shift-k = 'move up'
 alt-shift-l = 'move right'
 
 ##############################
-# Resize
+# 📏 Resize
 ##############################
 alt-up = 'resize smart -50'
 alt-down = 'resize smart +50'
 
 ##############################
-# Workspace Switching
+# 🔀 Workspace Switching
 ##############################
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'
 
 ##############################
-# Move Node to Workspace
+# 🗂️ Move Node to Workspace
 ##############################
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
 alt-shift-3 = 'move-node-to-workspace 3'
 
 ##############################
-# Miscellaneous
+# 🛠️ Miscellaneous
 ##############################
 alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 alt-shift-comma = 'mode service'
 
 ##############################
-# Shortcuts on Workspace 1
+# 💻 Shortcuts on Workspace 1 (Coding)
 ##############################
 
 alt-e = 'exec-and-forget open -a Emacs' # "E" for Emacs
@@ -91,7 +91,7 @@ alt-i = 'exec-and-forget open -a "Visual Studio Code"' # "I" for IDE
 alt-u = 'exec-and-forget open -a WezTerm' # "U" for Unix-like terminal
 
 ##############################
-# Shortcuts on Workspace 2
+# 📝 Shortcuts on Workspace 2 (Web and Note Taking)
 ##############################
 
 alt-a = 'exec-and-forget open -a Claude' # "A" for AI
@@ -99,7 +99,7 @@ alt-o = 'exec-and-forget open -a Obsidian' # "O" for Obsidian
 alt-f = 'exec-and-forget open -a Firefox' # "F" for Firefox
 
 ##############################
-# Shortcuts on Workspace 3
+# 💬 Shortcuts on Workspace 3 (Social/Chat/Admin)
 ##############################
 
 alt-p = 'exec-and-forget open -a 1Password' # "P" for Password manager
@@ -110,7 +110,7 @@ alt-c = 'exec-and-forget open -a Fantastical' # "C" for Calendar
 
 
 ############################################################
-# Keybindings for Service Mode
+# 🛠️ Keybindings for Service Mode
 ############################################################
 
 [mode.service.binding]
@@ -126,7 +126,7 @@ alt-shift-l = ['join-with right', 'mode main']
 
 
 ############################################################
-# Window Detection Rules
+# 🪟 Window Detection Rules
 ############################################################
 
 [[on-window-detected]]
@@ -135,7 +135,7 @@ run = 'layout floating'
 
 
 ##############################
-# Workspace 1
+# 💻 Workspace 1 (coding)
 ##############################
 
 [[on-window-detected]]
@@ -155,7 +155,7 @@ if.app-id = 'com.microsoft.VSCode'
 run = "move-node-to-workspace 1"
 
 ##############################
-# Workspace 2
+# 📝 Workspace 2 (Web, research and note taking)
 ##############################
 
 [[on-window-detected]]
@@ -183,7 +183,7 @@ if.app-name-regex-substring = '^Claude$'
 run = "move-node-to-workspace 2"
 
 ##############################
-# Workspace 3
+# 💬 Workspace 3 (social/chat/admin)
 ##############################
 
 [[on-window-detected]]
