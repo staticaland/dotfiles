@@ -88,7 +88,7 @@ alt-shift-comma = 'mode service'
 
 alt-e = 'exec-and-forget open -a Emacs' # "E" for Emacs
 alt-i = 'exec-and-forget open -a "Visual Studio Code"' # "I" for IDE
-alt-u = 'exec-and-forget open -a WezTerm' # "U" for Unix-like terminal
+alt-u = 'exec-and-forget open -a Ghostty ' # "U" for Unix-like terminal
 
 ##############################
 # 📝 Shortcuts on Workspace 2 (Web and Note Taking)
