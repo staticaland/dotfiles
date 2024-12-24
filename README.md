@@ -27,6 +27,15 @@ Programming syntax and CLI tools (like `vim`) are biased towards the US layout. 
 
 I forced myself to switch by using the [Keyboardio Model 01](https://keyboard.io). It also taught me how to touch type. Once you get used to this keyboard, only insanity could convince you to go back.
 
+# Prompt to generate Anki flashcards
+
+> I have this AeroSpace config file - could you create two things from it:
+>
+> 1. A markdown document with flashcards for learning AeroSpace's keybindings, where each flashcard starts with 'In AeroSpace' since they'll be mixed with other flashcards, and where the question is the action (e.g., 'In AeroSpace, how do you open Firefox?') with the answer being the keybinding (e.g., 'alt + f')
+> 2. A tab-separated file of the same flashcards that I can import into Anki, with the questions and answers separated by tabs
+>
+> Please create both as artifacts so I can use the markdown for reference and the tab-separated version for Anki import.
+
 # Inspiration
 
 * [Code Cast - YouTube](https://www.youtube.com/channel/UCcQsDUZiK1GWDcP7BpVO_kw)
