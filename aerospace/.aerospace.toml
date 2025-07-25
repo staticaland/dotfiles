@@ -94,15 +94,13 @@ alt-u = 'exec-and-forget open -a Ghostty ' # "U" for Unix-like terminal
 # 📝 Shortcuts on Workspace 2 (Web and Note Taking)
 ##############################
 
-alt-a = 'exec-and-forget open -a Claude' # "A" for AI
-alt-o = 'exec-and-forget open -a Obsidian' # "O" for Obsidian
+alt-n = 'exec-and-forget open -a Obsidian' # "N" for Notes
 alt-f = 'exec-and-forget open -a Firefox' # "F" for Firefox
 
 ##############################
 # 💬 Shortcuts on Workspace 3 (Social/Chat/Admin)
 ##############################
 
-alt-p = 'exec-and-forget open -a 1Password' # "P" for Password manager
 alt-y = 'exec-and-forget open -a Slack' # "Y" for Yapping
 alt-m = 'exec-and-forget open -a Messages' # "M" for Messages
 alt-s = 'exec-and-forget open -a Spotify' # "S" for Spotify
