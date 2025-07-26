@@ -1,14 +1,16 @@
 ---
+argument-hint: Additional instructions
 allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git commit:*)
 description: Create git commits
 ---
 
 ## Context
 
-Current git status: !`git status`
+- Current git status: !`git status`
 - Current git diff (staged and unstaged changes): !`git diff HEAD`
 - Current branch: !`git branch --show-current`
 - Recent commits: !`git log --oneline -10`
+- Additional instructions: $ARGUMENTS
 
 ## Commit
 
