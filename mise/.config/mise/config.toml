@@ -1,0 +1,6 @@
+[tools]
+terraform = "1"
+node = "22"
+python = 'latest'
+go = "latest"
+bun = "latest"
