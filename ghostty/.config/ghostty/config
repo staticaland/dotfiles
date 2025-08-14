@@ -12,23 +12,10 @@ theme = Dracula
 mouse-hide-while-typing = true
 scrollback-limit = 1000000
 
-keybind = ctrl+n=new_window
-
-keybind = ctrl+a>h=goto_split:left
-keybind = ctrl+a>j=goto_split:bottom
-keybind = ctrl+a>k=goto_split:top
-keybind = ctrl+a>l=goto_split:right
-
-keybind = ctrl+a>shift+h=new_split:left
-keybind = ctrl+a>shift+j=new_split:down
-keybind = ctrl+a>shift+k=new_split:up
-keybind = ctrl+a>shift+l=new_split:right
-
-keybind = ctrl+a>f=toggle_split_zoom
-
-keybind = ctrl+a>tab=next_tab
-keybind = ctrl+a>shift+tab=previous_tab
-
 keybind = super+r=reload_config
 
 window-save-state = always
+
+command=/Users/anders/bin/ghostty-tmux
+
+window-decoration = false
