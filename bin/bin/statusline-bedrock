@@ -1,27 +1,25 @@
 #!/bin/bash
 
-# Read JSON input from stdin
-input=$(cat)
-
-# Extract model ID and session ID from the input
-model_id=$(echo "$input" | jq -r '.model.id // ""')
-session_id=$(echo "$input" | jq -r '.session_id // ""')
+# Read and parse JSON in a single jq call (more efficient)
+read -r model_id session_id < <(jq -r '[.model.id // "", .session_id // ""] | @tsv')
 
 # Get session cost if session_id exists
 cost_display=""
-if [[ -n "$session_id" && "$session_id" != "null" ]]; then
-    cost=$(bun x ccusage session --id "$session_id" --json --jq '.totalCost' 2>/dev/null)
-    if [[ -n "$cost" && "$cost" != "null" ]]; then
-        cost_formatted=$(printf "%.2f" "$cost" 2>/dev/null)
-        if [[ $? -eq 0 ]]; then
-            cost_display=" \$${cost_formatted}"
-        fi
+if [[ -n "$session_id" ]]; then
+    # Use command substitution with || to handle failures gracefully
+    if cost=$(bun x ccusage session --id "$session_id" --json --jq '.totalCost' 2>/dev/null) \
+       && [[ -n "$cost" && "$cost" != "null" ]]; then
+        # Use printf -v to assign to variable (more idiomatic)
+        printf -v cost_display " \$%.2f" "$cost" 2>/dev/null || cost_display=""
     fi
 fi
 
-# Check if using Bedrock (Bedrock model IDs typically contain "bedrock" or specific AWS patterns)
-if [[ "$model_id" == *"bedrock"* ]] || [[ "$model_id" == *"anthropic.claude"* ]] || [[ "$model_id" == *"aws"* ]]; then
-    printf "\033[33mBedrock\033[0m${cost_display}"
-else
-    printf "\033[36mClaude API\033[0m${cost_display}"
-fi
+# Use case statement for pattern matching (more idiomatic for multiple patterns)
+case "$model_id" in
+    *bedrock*|*anthropic.claude*|*aws*)
+        printf "\033[33mBedrock\033[0m%s\n" "$cost_display"
+        ;;
+    *)
+        printf "\033[36mClaude API\033[0m%s\n" "$cost_display"
+        ;;
+esac
