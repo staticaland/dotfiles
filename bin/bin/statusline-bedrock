@@ -8,7 +8,6 @@ if [[ -n "$session_id" ]]; then
     # Use command substitution with || to handle failures gracefully
     if cost=$(bun x ccusage session --id "$session_id" --json --jq '.totalCost' 2>/dev/null) \
        && [[ -n "$cost" && "$cost" != "null" ]]; then
-        # Use printf -v to assign to variable (more idiomatic)
         printf -v cost_display " \$%.2f" "$cost" 2>/dev/null || cost_display=""
     fi
 fi
