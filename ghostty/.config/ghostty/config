@@ -16,6 +16,6 @@ keybind = super+r=reload_config
 
 window-save-state = always
 
-command=/Users/anders/bin/ghostty-tmux
+command=~/bin/ghostty-tmux
 
 window-decoration = false
