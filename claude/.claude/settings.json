@@ -28,15 +28,11 @@
       }
     ]
   },
-  "mcpServers": {
-    "terraform": {
-      "command": "docker",
-      "args": [
-        "run",
-        "-i",
-        "--rm",
-        "hashicorp/terraform-mcp-server"
-      ]
-    }
+  "statusLine": {
+    "type": "command",
+    "command": "statusline-bedrock"
+  },
+  "feedbackSurveyState": {
+    "lastShownTime": 1754000015888
   }
 }

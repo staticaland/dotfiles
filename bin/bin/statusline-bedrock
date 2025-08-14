@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Read JSON input from stdin
+input=$(cat)
+
+# Extract model ID from the input
+model_id=$(echo "$input" | jq -r '.model.id // ""')
+
+# Check if using Bedrock (Bedrock model IDs typically contain "bedrock" or specific AWS patterns)
+if [[ "$model_id" == *"bedrock"* ]] || [[ "$model_id" == *"anthropic.claude"* ]] || [[ "$model_id" == *"aws"* ]]; then
+    printf "\033[33mBedrock\033[0m"
+else
+    printf "\033[36mClaude API\033[0m"
+fi
