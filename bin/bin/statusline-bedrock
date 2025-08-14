@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Read and parse JSON in a single jq call (more efficient)
 read -r model_id session_id < <(jq -r '[.model.id // "", .session_id // ""] | @tsv')
 
 # Get session cost if session_id exists
@@ -14,7 +13,6 @@ if [[ -n "$session_id" ]]; then
     fi
 fi
 
-# Use case statement for pattern matching (more idiomatic for multiple patterns)
 case "$model_id" in
     *bedrock*|*anthropic.claude*|*aws*)
         printf "\033[33mBedrock\033[0m%s\n" "$cost_display"
