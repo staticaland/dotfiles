@@ -4,3 +4,4 @@ node = "22"
 python = 'latest'
 go = "latest"
 bun = "latest"
+"aqua:gruntwork-io/boilerplate" = "latest"
